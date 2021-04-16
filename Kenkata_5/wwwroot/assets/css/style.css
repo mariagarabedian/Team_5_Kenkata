@@ -317,7 +317,7 @@ html, body {
 .carousel-indicators {
     left: 0;
     top: auto;
-    bottom: -70px;
+    bottom: -50px;
 }
 
     .carousel-indicators [data-bs-target] {
