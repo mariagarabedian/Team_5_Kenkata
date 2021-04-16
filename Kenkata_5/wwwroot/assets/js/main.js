@@ -1,4 +1,4 @@
-
+/* Countdown Flash Sale */
     var countDate = new Date('July 1, 2021 00:00:00').getTime();
 
     function countdown(){
