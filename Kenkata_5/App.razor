@@ -1,0 +1,17 @@
+<Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+    </Found>
+    <NotFound>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <div id="notfound">
+                <div class="container">
+                    <img src="assets/img/404.svg">
+                    <h6>Oops! The page you are looking for doesn't exist.</h6>
+                    <NavLink  href="/" Match="NavLinkMatch.All"><button class="btn me-4">HOME</button></NavLink>
+                    <NavLink href="contactus"><button class="btn">CONTACT US</button></NavLink>
+                </div>
+            </div>
+        </LayoutView>
+    </NotFound>
+</Router>
