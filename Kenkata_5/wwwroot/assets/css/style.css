@@ -809,7 +809,6 @@ html, body {
     display: grid;
     grid-template-columns: 550px 550px;
     margin-top: 40px;
-    margin-left: 95px;
     column-gap: 5px;
 }
 
