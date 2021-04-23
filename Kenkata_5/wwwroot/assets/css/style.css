@@ -343,7 +343,6 @@ html, body {
 
 
 .newProduct-card {
-    height: 21.813rem;
     background-color: #EEEEEE;
 }
 
@@ -359,6 +358,7 @@ html, body {
     position: absolute;
     margin: 20px;
 }
+
 
 
 
@@ -829,7 +829,11 @@ html, body {
     row-gap: 5px;
 }
 
-    .topSellerCards-sub .showhov {
+.topSellerCards-sub .newProduct-card {
+        height: 21.813rem;
+    }
+
+.topSellerCards-sub .showhov {
         height: 345px;
     }
 
@@ -967,7 +971,61 @@ html, body {
     border: none;
 }
 
+/*////////// Shop Products /////*/
+/*////////// Shop Products /////*/
+.grid-products {
+    display: grid;
+    grid-template-columns: repeat(3,255px);
+    grid-column-gap: 39px;
+    justify-content: center;
+    align-content: center;
+    padding-top: 0;
+    grid-template-rows: repeat(4, 292px);
+    grid-row-gap: 39px;
+}
 
+.productsForm .newIcon {
+    width: 48px;
+    margin: 10px;
+}
+
+.productsForm .showhov {
+    height: 292px;
+}
+
+.productsForm .rectangle {
+    height: 161px;
+    width: 31px;
+}
+
+.productsForm .lineColor {
+    width: 13.4px;
+    height: 12px;
+}
+
+.productsForm .fa-circle {
+    height: 14px;
+    width: 14px;
+}
+
+.productsForm .showhov .card-body-hover {
+    bottom: -280px;
+}
+
+.productsForm .star {
+    bottom: -280px;
+}
+
+.productsForm .tooltipcl {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    margin-left: -5px;
+    padding: 0;
+}
+
+    .productsForm .tooltipcl .tooltiptext {
+        margin-top: -20px;
+    }
 
 
 
