@@ -1,6 +1,5 @@
 ﻿@page "/shop"
 
-
 @* ================== shop new customer ================== *@
 
 <div id="new-customer">
@@ -23,7 +22,49 @@
 
 @* =================== shop sort och nav ================= *@
 
+<div id="shop-sort">
+    <div class="container">
+        <div class="col-4">
+            <h4 class="">Shop</h4>
+            <div><NavLink href="/"><a class="link-grey">Home / </a></NavLink><NavLink href="shop"><a class="link-grey">Shop</a></NavLink></div>
+        </div>
 
+        <ul class="col-7 options list">
+            <li class="nav-item border">
+                <div class="d-flex align-items-center ps-4 pe-4 pt-3">
+                    <p class="m-0">Show: </p>
+                    <div class="d-flex">
+                        <a class="nav-link p-1" href="">9/</a>
+                        <a class="nav-link p-1" href="">12/</a>
+                        <a class="nav-link p-1" href="">18/</a>
+                        <a class="nav-link p-1" href="">24</a>
+                    </div>
+
+                </div>
+            </li>
+
+
+            <li id="l-sort" class="nav-item border ms-5 options">
+                <a class="nav-link" href=""><i class="bi bi-list-ul me-2"></i></a>
+                <a class="nav-link" href=""><i class="bi bi-grid-fill me-2"></i></a>
+                <a class="nav-link" href=""><i class="bi bi-grid-3x3-gap-fill"></i></a>
+            </li>
+
+            <li class="nav-item dropdown border ms-5 options">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Default sorting
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="">Price</a></li>
+                    <li><a class="dropdown-item" href="">Size</a></li>
+                    <li><a class="dropdown-item" href="">New Arrivals</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</div>
+  
 
 
 
