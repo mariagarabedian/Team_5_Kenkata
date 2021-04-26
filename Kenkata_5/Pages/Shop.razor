@@ -76,7 +76,157 @@
 <div class="container">
     <div class="row">
 
-        <div class="col-3"> col3</div>
+        <div class="col-3">
+            @* ================= Filters ========================= *@
+            <section id="filters">
+                <div id="category">
+                    <h6>Product Categories</h6>
+                    <div class="flex justify-content-between filthov"><p>Men´s</p><p id="b-p" class="border-p ">18</p></div>
+                    <div class="flex justify-content-between filthov"><p>Women´s</p><p class="border-p ">18</p></div>
+                    <div class="flex justify-content-between filthov"><p>Kid´s</p><p class="border-p ">18</p></div>
+                    <div class="flex justify-content-between filthov"><p>Hats</p><p class="border-p ">18</p></div>
+                    <div class="flex justify-content-between filthov"><p>Sunglasses</p><p class="border-p ">18</p></div>
+                    <div class="flex justify-content-between filthov"><p>Shoes</p><p class="border-p ">18</p></div>
+                    <div class="flex justify-content-between filthov"><p>Watches</p><p class="border-p ">18</p></div>
+
+
+                    <!-- Filters  by Price -->
+                    <h6 class="mt-3 pb-3">Filter by Price</h6>
+                    <div class="mt-4">
+                        <div class="range-slider">
+
+                            <input value="0" min="0" max="10000" step="50" type="range">
+                            <input value="50000" min="0" max="10000" step="50" type="range">
+                            <span id="range">Price: $ <input type="number" value="0" min="0" max="10000" step="50"> - $ <input type="number" value="10000" min="0" max="10000" step="50"></span>
+
+                            <div class="d-flex">
+
+                                <button class="btn border mt-2">Filter</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filters by colors -->
+                    <h6 class="mt-5">Filter by Color</h6>
+                    <div id="filter-by-color">
+                        <div class="row">
+
+                            <div class="onhover">
+                                <div class="hov">
+                                    <div class=" mb-2 relative ">
+                                        <i id="s-fill" class="bi bi-square-fill black"></i>
+                                        <div class="flex justify-content-between"><p>Black</p><p>12</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="shov">
+                                    <div class=" mb-2 relative ">
+                                        <i id="s-check" class="bi bi-check-square-fill black"></i>
+                                        <div class="flex justify-content-between"><p>Black</p><p class="border pe-1">12</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="onhover">
+
+                                <div class="hov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-fill" class="bi bi-square-fill grey"></i>
+                                        <div class="flex justify-content-between d-width"><p>Grey</p><p>12</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="shov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-check" class="bi bi-check-square-fill grey"></i>
+                                        <div class="flex justify-content-between"><p>Grey</p><p class="border pe-1">12</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="onhover">
+
+                                <div class="hov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-fill" class="bi bi-square-fill red"></i>
+                                        <div class="flex justify-content-between d-width"><p>Red</p><p>12</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="shov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-check" class="bi bi-check-square-fill red"></i>
+                                        <div class="flex justify-content-between"><p>Red</p><p class="border pe-1">12</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="onhover">
+
+                                <div class="hov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-fill" class="bi bi-square-fill green"></i>
+                                        <div class="flex justify-content-between d-width"><p>Green</p><p>12</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="shov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-check" class="bi bi-check-square-fill green"></i>
+                                        <div class="flex justify-content-between"><p>Green</p><p class="border pe-1">12</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="onhover">
+
+                                <div class="hov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-fill" class="bi bi-square-fill orange"></i>
+                                        <div class="flex justify-content-between d-width"><p>Orange</p><p>12</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="shov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-check" class="bi bi-check-square-fill orange"></i>
+                                        <div class="flex justify-content-between"><p>Orange</p><p class="border pe-1">12</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="onhover">
+
+                                <div class="hov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-fill" class="bi bi-square-fill brown"></i>
+                                        <div class="flex justify-content-between d-width"><p>Brown</p><p>12</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="shov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-check" class="bi bi-check-square-fill brown"></i>
+                                        <div class="flex justify-content-between"><p>Brown</p><p class="border pe-1">12</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h6 class="mt-5">Filter By Size</h6>
+                <div class="flex justify-content-between filthov"><p>XS</p><p class="border-p ">18</p></div>
+                <div class="flex justify-content-between filthov"><p>S</p><p class="border-p ">18</p></div>
+                <div class="flex justify-content-between filthov"><p>M</p><p class="border-p ">18</p></div>
+                <div class="flex justify-content-between filthov"><p>L</p><p class="border-p ">18</p></div>
+                <div class="flex justify-content-between filthov"><p>XL</p><p class="border-p ">18</p></div>
+                <div class="flex justify-content-between filthov"><p>XXL</p><p class="border-p ">18</p></div>
+            </section>
+        </div>
         <div class="grid-products col-9">
             <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
             <NavLink href="Women"><div class="productsForm"><ProductCard /></div></NavLink>
