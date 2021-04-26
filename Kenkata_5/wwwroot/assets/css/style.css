@@ -1060,18 +1060,228 @@ html, body {
 }
 
 /* ====  Filters  ==== */
-#filters h6{
+#filters h6 {
     color: #20D3C2;
 }
 
-#filters .filthov:hover{
+#filters p {
+    font-size: 1rem;
+}
+
+
+#filters .border-p {
+    border-radius: 5px;
+    text-align: center;
+    width: 1.688rem;
+    height: 1.25rem;
+}
+
+#filters .border-p:hover {
+    color: #FFF;
+    background-color: #20D3C2;
+}
+
+#filters .filthov:hover {
     color: #20D3C2;
 }
 
-#filters button{
+
+#filters button {
     background-color: #20D3C2;
     color: #FFFF;
     border: none;
+    width: 4.5rem;
+    height: 1.5rem;
+    font-size: 0.875rem;
+    padding: 0;
+}
+
+#filters button:hover {
+    background-color: #0E153D;
+    box-shadow: none;
+}
+
+#filter-by-color p {
+    color: #0E153D;
+    margin: 0;
+    padding-left: 5px;
+    padding-top: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#filter-by-color .onhover:hover .hov {
+    display: none;
+}
+
+#filter-by-color .onhover:hover .shov {
+    display: block;
+}
+
+.shov {
+    position: relative;
+    display: none;
+}
+
+
+
+.relative {
+    position: relative;
+    margin-left: 13px;
+}
+
+#s-fill {
+    z-index: 1;
+    position: absolute;
+    top: -2px;
+    left: -12px;
+}
+
+
+#s-check {
+    z-index: 2;
+    position: absolute;
+    top: -2px;
+    left: -12px;
+}
+
+.shov .border {
+    border: transparent;
+    border-radius: 5px;
+    background-color: #20D3C2;
+    color: #FFF !important;
+}
+
+
+/* === Filter by price === */
+#range input {
+    border: none;
+    text-align: left;
+    width: 73px;
+}
+
+.range-slider {
+    width: 255px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    height: 3rem;
+}
+
+.range-slider svg,
+.range-slider input[type="range"] {
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+}
+
+input[type="number"] {
+    text-align: center;
+    font-size: 1rem;
+}
+
+input[type="number"]:invalid,
+input[type="number"]:out-of-range {
+    border: 2px solid #ff6347;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: #20D3C2;
+}
+
+input[type="range"]:focus::-ms-fill-lower {
+    background: #20D3C2;
+}
+
+input[type="range"]:focus::-ms-fill-upper {
+    background: #20D3C2;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #20D3C2;
+    border-radius: 1px;
+    box-shadow: none;
+    border: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    z-index: 2;
+    position: relative;
+    box-shadow: 0px 0px 0px #000;
+    border: 1px solid #20D3C2;
+    height: 18px;
+    width: 4px;
+    border-radius: 25px;
+    background: #20D3C2;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    /* animate: 0.2s; */
+    animation: 0.2s;
+    background: #20D3C2;
+    border-radius: 1px;
+    box-shadow: none;
+    border: 0;
+}
+
+input[type="range"]::-moz-range-thumb {
+    z-index: 2;
+    position: relative;
+    box-shadow: 0px 0px 0px #000;
+    border: 1px solid #20D3C2;
+    height: 18px;
+    width: 4px;
+    border-radius: 25px;
+    background: #20D3C2;
+    cursor: pointer;
+}
+
+input[type="range"]::-ms-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    /* animate: 0.2s; */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower,
+input[type="range"]::-ms-fill-upper {
+    background: #20D3C2;
+    border-radius: 1px;
+    box-shadow: none;
+    border: 0;
+}
+
+input[type="range"]::-ms-thumb {
+    z-index: 2;
+    position: relative;
+    box-shadow: 0px 0px 0px #000;
+    border: 1px solid #20D3C2;
+    height: 18px;
+    width: 4px;
+    border-radius: 25px;
+    background: #20D3C2;
+    cursor: pointer;
 }
 
 /*////////// Shop Products /////*/
@@ -1341,9 +1551,6 @@ button.link {
     font-family: roboto;
 }
 
-span {
-    color: #0E153D;
-}
 
 #cateName {
     color: #20D3C2;
