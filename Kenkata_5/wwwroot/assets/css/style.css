@@ -676,7 +676,7 @@ html, body {
     height: 3.375rem;
     padding: 0.5rem 0.8rem;
     font-size: 1.125rem;
-    font-weight: medium;
+    font-weight: 500;
     border: none;
 }
 
@@ -739,6 +739,76 @@ html, body {
     top: -40px;
     left: -300px;
 }
+
+
+
+/* === Shop Sort === */
+#shop-sort {
+    background-color: #F6F6F6;
+}
+
+#shop-sort .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8.75rem;
+    margin-top: 7.5rem;
+}
+
+#shop-sort h4 {
+    color: #20D3c2;
+    font-size: 1.5rem;
+}
+
+#shop-sort p {
+    color: #FFFF;
+}
+
+#shop-sort .link-grey {
+    color: #0E153D;
+    font-size: 1rem;
+}
+
+#shop-sort .link-grey:hover {
+    color: #AAAA;
+}
+
+#shop-sort .options {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+}
+
+#shop-sort ul li {
+    background-color: #0E153D;
+    border-radius: 5px;
+    height: 60px;
+    align-items: center;
+}
+
+#l-sort a {
+    font-size: 1.563rem;
+}
+
+#shop-sort a {
+    color: #FFFF;
+    text-decoration: none;
+}
+
+#shop-sort a:hover {
+    color: #20D3C2;
+}
+
+#shop-sort i {
+    height: 1.563rem;
+}
+
+#shop-sort i:hover {
+    color: #20D3C2;
+}
+
+
 
 
 /* === Flash Sale === */
