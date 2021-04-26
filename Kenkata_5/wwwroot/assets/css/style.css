@@ -641,70 +641,103 @@ html, body {
 /* === SHOP New Customer === */
 #new-customer {
     background-color: #0E153D;
-
+    height: 25rem;
+    /* position: relative; */
 }
 
-#new-customer .container {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    text-align: left;
-    height:25rem ;
+    #new-customer .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        height: 25rem;
+    }
+
+    #new-customer h1 {
+        color: #FFFF;
+        font-size: 2.25rem;
+        font-weight: bold;
+        width: 17.5rem;
+        text-align: left;
+        margin-bottom: 2.375rem;
+    }
+
+@media (min-width:1200px) {
+    #new-customer h1 {
+        font-size: 2.25rem;
+    }
 }
 
-#new-customer  h1 {
-    color:#FFFF ;
-    font-size: 2.25rem;
-    font-weight: bold;
-    width: 17.5rem;
-    text-align: left;
-    margin-bottom: 2.375rem;
-}
-@media (min-width:1200px) {#new-customer h1 {font-size: 3.75rem;}}
-
-#new-customer button{
+#new-customer button {
     background-color: #FFFF;
     color: #20D3C2;
-    border-radius: 3rem; 
+    border-radius: 3rem;
     width: 10.75rem;
-    height:3.375rem ;
+    height: 3.375rem;
     padding: 0.5rem 0.8rem;
-    font-size:1.125rem ;
-    font-weight:500;
+    font-size: 1.125rem;
+    font-weight: medium;
     border: none;
 }
 
-#new-customer .sneakers{
+#new-customer .sneakers {
+    position: relative;
     display: none;
 }
-@media (min-width: 1200px) {#new-customer .sneakers {display: block;}}
 
-#new-customer .absolute-new{
-    position: absolute;
-    top: 3.75rem;
-    right:41.25rem;
-
-}
-#new-customer .absolute-dis{
-    position: absolute;
-    top: 6.25rem;
-    right:21.875rem ;
-  
-
+@media (min-width: 1200px) {
+    #new-customer .sneakers {
+        display: block;
+    }
 }
 
-#new-customer .l-sneaker{
-   
+#new-customer .absolute-new {
+    position: absolute;
+    top: -8rem;
+    right: 23.10rem;
+}
+
+#new {
+    z-index: 2;
+    position: absolute;
+}
+
+#new-customer .absolute-dis {
+    position: absolute;
+    top: -6.25rem;
+    right: 6rem;
+}
+
+#dis {
+    z-index: 2;
+    position: absolute;
+}
+
+#new-customer .l-sneaker {
     right: -70px;
     height: 11.188rem;
-    width:18.688rem ;
+    width: 18.688rem;
     margin-top: -4.25rem;
 }
 
-#new-customer .r-sneaker{
+#new-customer .r-sneaker {
     height: 10.313rem;
-    width:16.938rem ;
+    width: 16.938rem;
     margin-bottom: -4.563rem;
+}
+
+#l-sneaker {
+    z-index: 1;
+    position: absolute;
+    top: -50px;
+    left: -540px;
+}
+
+#r-sneaker {
+    z-index: 1;
+    position: absolute;
+    top: -40px;
+    left: -300px;
 }
 
 
