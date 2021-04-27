@@ -1297,13 +1297,14 @@ input[type="range"]::-ms-thumb {
     grid-row-gap: 39px;
 }
 
+
 .productsForm .newIcon {
     width: 48px;
     margin: 10px;
 }
 
 .productsForm .showhov {
-    height: 292px;
+    height: 305px;
 }
 
 .productsForm .rectangle {
