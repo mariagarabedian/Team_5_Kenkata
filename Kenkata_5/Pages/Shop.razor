@@ -1,5 +1,6 @@
 ﻿@page "/shop"
 
+@inject HttpClient Http
 @* ================== shop new customer ================== *@
 
 <div id="new-customer">
@@ -64,7 +65,7 @@
     </div>
 
 </div>
-  
+
 
 
 
@@ -229,6 +230,7 @@
         </div>
         <div class="grid-products col-9">
             <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
+            @*<a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
             <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
             <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
             <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
@@ -238,8 +240,7 @@
             <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
             <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
             <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
+            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>*@
 
 
 
@@ -361,8 +362,30 @@
     </div>
 </div>
 
+@*@foreach (var product in products)
+    {
+
+
+        <div>
+            <div>@product.Id</div>
+
+
+        </div>
+
+    }*@
+
+
+
 
 
 @code {
+    private IEnumerable<ProductModel> products;
 
+
+    // Denna initieras när sidan laddas men behöver jag  uppdatera något flera gånger använder jag den ovan
+    protected override async Task OnInitializedAsync()
+    {
+        products = await Http.GetFromJsonAsync<IEnumerable<ProductModel>>("https://localhost:44315/api/Product");
+
+    }
 }
