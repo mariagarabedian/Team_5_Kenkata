@@ -1331,6 +1331,7 @@ input[type="range"]::-ms-thumb {
     padding-top: 0;
     grid-template-rows: repeat(4, 292px);
     grid-row-gap: 39px;
+    height: fit-content;
 }
 
 
