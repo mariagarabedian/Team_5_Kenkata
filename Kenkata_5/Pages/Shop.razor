@@ -1,6 +1,7 @@
 ﻿@page "/shop"
+@inject HttpClient Http
 
-<Header/>
+<Header />
 
 @* ================== shop new customer ================== *@
 
@@ -66,7 +67,7 @@
     </div>
 
 </div>
-  
+
 
 
 
@@ -252,7 +253,7 @@
                         </button>
                     </NavLink>
 
-                    
+
 
                     <NavLink href="dismis">
                         <button class="brands-btn">
@@ -266,7 +267,7 @@
                         </button>
                     </NavLink>
 
-                    
+
 
                     <NavLink href="dallas">
                         <button class="brands-btn">
@@ -336,39 +337,66 @@
                 </div>
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
+
+
+
+
+
         <div class="grid-products col-9">
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
-            <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="productsForm"><ProductCard /></div></a>
+            @if (products == null)
+            {
+                <p>No products found</p>
+            }
+            else
+            {
+                @foreach (var product in products.Take(12))
+                {
+                    <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <div class="productsForm">
+                            <div class="onhover">
+                                <div class="card hov ">
+                                    <img id="shop-img" src="@product.Image" alt="boy" class="newProduct-card">
+                                    <img src="./assets/img/iconNew.svg" alt="icon" class="newIcon">
+                                    <div class="card-footer border-success"><span>Winter collection for women's</span></div>
+                                </div>
 
 
+                                <div class="showhov ">
+                                    <div class="card  ">
+                                        <div class="rectangle">
+                                            <i class="fas fa-circle tooltipcl "><span class="tooltiptext" id="bg"><i class="fas fa-circle sp-ms " style="color:#82D8C6"></i><i class="fas fa-circle sp-ms " style="color:#CA82D8"></i><i class="fas fa-circle sp-ms " style="color:#FE6C6C"></i><i class="fas fa-circle sp-ms " style="color:#333333"></i></span></i>
+                                            <i class="far fa-heart lineColor tooltipcl"><span class="tooltiptext">Add to favourite</span></i>
+                                            <i class="fas fa-random lineColor tooltipcl"><span class="tooltiptext">Compare</span></i>
+                                            <i class="fas fa-search lineColor tooltipcl"><span class="tooltiptext">Search</span></i>
+                                            <i class="fas fa-shopping-cart lineColor tooltipcl"><span class="tooltiptext">Add to cart</span></i>
+                                        </div>
 
+                                        <div>
+                                            <div class="card-body-hover">
+                                                <span class="card-text">@product.ProductName</span><br>
+                                                <span class="card-fashion">Fashion</span><br>
+                                                <span class="regular-price">@product.Price</span><br>
+                                                <span class="card-cost">@product.Price</span>
+                                            </div>
+
+                                            <div class="star">
+                                                <i class="fas fa-star "></i>
+                                                <i class="fas fa-star "></i>
+                                                <i class="fas fa-star "></i>
+                                                <i class="fas fa-star "></i>
+                                                <i class="far fa-star "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
         </div>
-
     </div>
-
 </div>
 
 
@@ -485,9 +513,16 @@
 
 
 
-<Footer/>
+<Footer />
 
 
 @code {
+    private IEnumerable<Product> products;
 
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await Http.GetFromJsonAsync<IEnumerable<Product>>("https://localhost:44315/api/Product");
+
+    }
 }
