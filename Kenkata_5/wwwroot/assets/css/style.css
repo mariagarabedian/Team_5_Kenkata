@@ -1606,6 +1606,10 @@ button.link {
         margin-top: 3px;
     }
 
+.productsForm .newProduct-card {
+    height: 262px;
+}
+
 
 /*=== Oscars delar*/
 #header strong {
