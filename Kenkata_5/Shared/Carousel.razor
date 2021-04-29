@@ -8,102 +8,87 @@
                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
-
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active ">
-
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="single-box">
-                                    @*@foreach (var product in products)
-                                    {
-                                        @if (product.Id <= 3)
-                                        {
-
-                                        }
-                                    }*@
 
 
-                                    <NavLink href="men"><ProductCard /></NavLink>
-
-
-
-                                </div>
-                                @*</div>
+                            @if (products == null)
+                            {
+                                <p>No products found</p>
+                            }
+                            else
+                            {
+                                foreach (var product in products.Take(3))
+                                {
                                     <div class="col-md-4">
-                                            <div class="single-box">
+                                        <div class="single-box">
+                                            <NavLink href="men">
+                                                <div class="onhover">
+                                                    <div class="card hov ">
+                                                        <img src="@product.Image" alt="boy" class="newProduct-card">
+                                                        <img src="./assets/img/iconNew.svg" alt="icon" class="newIcon">
+                                                        <div class="card-footer border-success"><span>Winter collection for women's</span></div>
+                                                    </div>
 
-                                                <NavLink href="women"><ProductCard /></NavLink>
 
-                                            </div>
-                                     </div>
-                                    <div class="col-md-4">
-                                            <div class="single-box">
-                                                <NavLink href="kids"><ProductCard /></NavLink>
-                                            </div>
-                                    </div>*@
-                            </div>
+                                                    <div class="showhov ">
+                                                        <div class="card  ">
+                                                            <div class="rectangle">
+                                                                <i class="fas fa-circle tooltipcl ">
+                                                                    <span class="tooltiptext" id="bg">
+                                                                        <i class="fas fa-circle sp-ms " style="color:#82D8C6"></i>
+                                                                        <i class="fas fa-circle sp-ms " style="color:#CA82D8"></i>
+                                                                        <i class="fas fa-circle sp-ms " style="color:#FE6C6C"></i>
+                                                                        <i class="fas fa-circle sp-ms " style="color:#333333"></i>
+                                                                    </span>
+                                                                </i>
+                                                                <i class="far fa-heart lineColor tooltipcl"><span class="tooltiptext">Add to favourite</span></i>
+                                                                <i class="fas fa-random lineColor tooltipcl"><span class="tooltiptext">Compare</span></i>
+                                                                <i class="fas fa-search lineColor tooltipcl"><span class="tooltiptext">Search</span></i>
+                                                                <i class="fas fa-shopping-cart lineColor tooltipcl"><span class="tooltiptext">Add to cart</span></i>
+                                                            </div>
+
+                                                            <div>
+                                                                <div class="card-body-hover">
+                                                                    <span class="card-text">@product.ProductName</span><br>
+                                                                    <span class="card-fashion">Fashion</span><br>
+                                                                    <span class="regular-price">@product.Price</span><br>
+                                                                    <span class="card-cost">@product.Price</span>
+                                                                </div>
+
+                                                                <div class="star">
+                                                                    <i class="fas fa-star  "></i>
+                                                                    <i class="fas fa-star  "></i>
+                                                                    <i class="fas fa-star  "></i>
+                                                                    <i class="fas fa-star  "></i>
+                                                                    <i class="far fa-star "></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </NavLink>
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+
                         </div>
-                        <!--<div class="carousel-item ">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="single-box">
-                                        <NavLink href="men"><ProductCard /></NavLink>
-                                    </div>
-                                </div>-->
-                        @*<div class="col-md-4">
-                                <div class="single-box">
-                                    <NavLink href="women"><ProductCard /></NavLink>
-                                </div>
-                            </div>*@
-
-                        @*<div class="col-md-4">
-                                <div class="single-box">
-                                    <NavLink href="kids"><ProductCard /></NavLink>
-                                </div>
-                            </div>*@
-                        <!--</div>
-                        </div>-->
-                        @*<div class="carousel-item ">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="single-box">
-                                            <NavLink href="men"><ProductCard /></NavLink>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="single-box">
-                                            <NavLink href="women"><ProductCard /></NavLink>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="single-box">
-                                            <NavLink href="kids"><ProductCard /></NavLink>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>*@
-
-
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
+
 
 
 @code {
 
     private IEnumerable<ProductModel> products;
-
-    private ProductModel product;
 
 
     protected override async Task OnInitializedAsync()
@@ -112,4 +97,4 @@
 
     }
 }
-}
+

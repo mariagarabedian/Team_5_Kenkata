@@ -1,7 +1,4 @@
 ﻿@page "/"
-
-
-
 @* ==========   Shop More Fun =============== *@
 <section id="shopmorefun">
     <div class="container">
@@ -17,7 +14,7 @@
         </div>
 
     </div>
-</section> 
+</section>
 
 @* ==================== Info Boxes ==================== *@
 <InfoBoxes />
@@ -155,31 +152,221 @@
 
 <div class="container mb-5  ">
     <div class="grid-topSellers">
-        <div class="topSellerCards">
+        @if (products == null)
+        {
+            <p><em>Loading... There is a problem</em></p>
+        }
+        else
+        {
+            @foreach (var product in products.Take(1))
+            {
+                <div class="topSellerCards">
+                    <div class="sub-grid ">
+                        <NavLink href="Women">
+                            <div class="onhover">
+                                <div class="card hov ">
+                                    <img src="@product.Image" alt="boy" class="newProduct-card">
+                                    <img src="./assets/img/iconNew.svg" alt="icon" class="newIcon">
+                                    <div class="card-footer border-success"><span>Winter collection for women's</span></div>
+                                </div>
 
-            <NavLink href="men"><ProductCard /></NavLink>
 
-        </div>
+                                <div class="showhov ">
+                                    <div class="card  ">
+                                        <div class="rectangle">
+                                            <i class="fas fa-circle tooltipcl "><span class="tooltiptext" id="bg"><i class="fas fa-circle sp-ms " style="color:#82D8C6"></i><i class="fas fa-circle sp-ms " style="color:#CA82D8"></i><i class="fas fa-circle sp-ms " style="color:#FE6C6C"></i><i class="fas fa-circle sp-ms " style="color:#333333"></i></span></i>
+                                            <i class="far fa-heart lineColor tooltipcl"><span class="tooltiptext">Add to favourite</span></i>
+                                            <i class="fas fa-random lineColor tooltipcl"><span class="tooltiptext">Compare</span></i>
+                                            <i class="fas fa-search lineColor tooltipcl"><span class="tooltiptext">Search</span></i>
+                                            <i class="fas fa-shopping-cart lineColor tooltipcl"><span class="tooltiptext">Add to cart</span></i>
+                                        </div>
 
-        <div class="topSellerCards-sub">
+                                        <div>
+                                            <div class="card-body-hover">
+                                                <span class="card-text">@product.ProductName</span><br>
+                                                <span class="card-fashion">Fashion</span><br>
+                                                <span class="regular-price">@product.Price</span><br>
+                                                <span class="card-cost">@product.Price</span>
+                                            </div>
 
-            <div class="sub-grid ">
-                <NavLink href="Women"><ProductCard /></NavLink>
+                                            <div class="star">
+                                                <i class="fas fa-star  "></i>
+                                                <i class="fas fa-star  "></i>
+                                                <i class="fas fa-star  "></i>
+                                                <i class="fas fa-star  "></i>
+                                                <i class="far fa-star "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </NavLink>
+
+                    </div>
+                </div>
+
+                    }
+
+                    @foreach (var product in products.Take(1))
+                    {
+                        <div class="topSellerCards-sub">
+
+                            <div class="sub-grid ">
+                                <NavLink href="Women">
+                                    <div class="onhover">
+                                        <div class="card hov ">
+                                            <img src="@product.Image" alt="boy" class="newProduct-card">
+                                            <img src="./assets/img/iconNew.svg" alt="icon" class="newIcon">
+                                            <div class="card-footer border-success"><span>Winter collection for women's</span></div>
+                                        </div>
+
+
+                                        <div class="showhov ">
+                                            <div class="card  ">
+                                                <div class="rectangle">
+                                                    <i class="fas fa-circle tooltipcl "><span class="tooltiptext" id="bg"><i class="fas fa-circle sp-ms " style="color:#82D8C6"></i><i class="fas fa-circle sp-ms " style="color:#CA82D8"></i><i class="fas fa-circle sp-ms " style="color:#FE6C6C"></i><i class="fas fa-circle sp-ms " style="color:#333333"></i></span></i>
+                                                    <i class="far fa-heart lineColor tooltipcl"><span class="tooltiptext">Add to favourite</span></i>
+                                                    <i class="fas fa-random lineColor tooltipcl"><span class="tooltiptext">Compare</span></i>
+                                                    <i class="fas fa-search lineColor tooltipcl"><span class="tooltiptext">Search</span></i>
+                                                    <i class="fas fa-shopping-cart lineColor tooltipcl"><span class="tooltiptext">Add to cart</span></i>
+                                                </div>
+
+                                                <div>
+                                                    <div class="card-body-hover">
+                                                        <span class="card-text">@product.ProductName</span><br>
+                                                        <span class="card-fashion">Fashion</span><br>
+                                                        <span class="regular-price">@product.Price</span><br>
+                                                        <span class="card-cost">@product.Price</span>
+                                                    </div>
+
+                                                    <div class="star">
+                                                        <i class="fas fa-star  "></i>
+                                                        <i class="fas fa-star  "></i>
+                                                        <i class="fas fa-star  "></i>
+                                                        <i class="fas fa-star  "></i>
+                                                        <i class="far fa-star "></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </NavLink>
+
+                            </div>
+
+                            <div class="sub-grid">
+                                <NavLink href="kids">
+                                    <div class="onhover">
+                                        <div class="card hov ">
+                                            <img src="@product.Image" alt="boy" class="newProduct-card">
+                                            <img src="./assets/img/iconNew.svg" alt="icon" class="newIcon">
+                                            <div class="card-footer border-success"><span>Winter collection for women's</span></div>
+                                        </div>
+
+
+                                        <div class="showhov ">
+                                            <div class="card  ">
+                                                <div class="rectangle">
+                                                    <i class="fas fa-circle tooltipcl "><span class="tooltiptext" id="bg"><i class="fas fa-circle sp-ms " style="color:#82D8C6"></i><i class="fas fa-circle sp-ms " style="color:#CA82D8"></i><i class="fas fa-circle sp-ms " style="color:#FE6C6C"></i><i class="fas fa-circle sp-ms " style="color:#333333"></i></span></i>
+                                                    <i class="far fa-heart lineColor tooltipcl"><span class="tooltiptext">Add to favourite</span></i>
+                                                    <i class="fas fa-random lineColor tooltipcl"><span class="tooltiptext">Compare</span></i>
+                                                    <i class="fas fa-search lineColor tooltipcl"><span class="tooltiptext">Search</span></i>
+                                                    <i class="fas fa-shopping-cart lineColor tooltipcl"><span class="tooltiptext">Add to cart</span></i>
+                                                </div>
+
+                                                <div>
+                                                    <div class="card-body-hover">
+                                                        <span class="card-text">@product.ProductName</span><br>
+                                                        <span class="card-fashion">Fashion</span><br>
+                                                        <span class="regular-price">@product.Price</span><br>
+                                                        <span class="card-cost">@product.Price</span>
+                                                    </div>
+
+                                                    <div class="star">
+                                                        <i class="fas fa-star  "></i>
+                                                        <i class="fas fa-star  "></i>
+                                                        <i class="fas fa-star  "></i>
+                                                        <i class="fas fa-star  "></i>
+                                                        <i class="far fa-star "></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </NavLink>
+
+                            </div>
+
+                        </div>
+                    }
+                    }
+                    @*@foreach (var product in products)
+                    {
+                        <div class="topSellerCards">
+
+                            <NavLink href="men">
+                                <div class="onhover">
+                                    <div class="card hov ">
+                                        <img src="@product.Image" alt="boy" class="newProduct-card">
+                                        <img src="./assets/img/iconNew.svg" alt="icon" class="newIcon">
+                                        <div class="card-footer border-success"><span>Winter collection for women's</span></div>
+                                    </div>
+
+
+                                    <div class="showhov ">
+                                        <div class="card  ">
+                                            <div class="rectangle">
+                                                <i class="fas fa-circle tooltipcl "><span class="tooltiptext" id="bg"><i class="fas fa-circle sp-ms " style="color:#82D8C6"></i><i class="fas fa-circle sp-ms " style="color:#CA82D8"></i><i class="fas fa-circle sp-ms " style="color:#FE6C6C"></i><i class="fas fa-circle sp-ms " style="color:#333333"></i></span></i>
+                                                <i class="far fa-heart lineColor tooltipcl"><span class="tooltiptext">Add to favourite</span></i>
+                                                <i class="fas fa-random lineColor tooltipcl"><span class="tooltiptext">Compare</span></i>
+                                                <i class="fas fa-search lineColor tooltipcl"><span class="tooltiptext">Search</span></i>
+                                                <i class="fas fa-shopping-cart lineColor tooltipcl"><span class="tooltiptext">Add to cart</span></i>
+                                            </div>
+
+                                            <div>
+                                                <div class="card-body-hover">
+                                                    <span class="card-text">@product.ProductName</span><br>
+                                                    <span class="card-fashion">Fashion</span><br>
+                                                    <span class="regular-price">@product.Price</span><br>
+                                                    <span class="card-cost">@product.Price</span>
+                                                </div>
+
+                                                <div class="star">
+                                                    <i class="fas fa-star  "></i>
+                                                    <i class="fas fa-star  "></i>
+                                                    <i class="fas fa-star  "></i>
+                                                    <i class="fas fa-star  "></i>
+                                                    <i class="far fa-star "></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </NavLink>
+
+                        </div>*@
+
+                    @*<div class="topSellerCards-sub">
+
+                        <div class="sub-grid ">
+                            <NavLink href="Women"><ProductCard /></NavLink>
+
+                        </div>
+
+                        <div class="sub-grid">
+                            <NavLink href="kids"><ProductCard /></NavLink>
+
+                        </div>
+
+                    </div>*@
+
+
+
+
+
+                </div>
 
             </div>
-
-            <div class="sub-grid">
-                <NavLink href="kids"><ProductCard /></NavLink>
-
-            </div>
-
-        </div>
-
-
-
-    </div>
-
-</div>
 
 @* ================ Recensioner ====================== *@
 
@@ -195,3 +382,19 @@
 
 
 @*<SurveyPrompt Title="How is Blazor working for you?" />*@
+
+
+
+@code {
+
+    private IEnumerable<ProductModel> products;
+
+    private ProductModel product;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await Http.GetFromJsonAsync<IEnumerable<ProductModel>>("https://localhost:44315/api/Product");
+
+    }
+}

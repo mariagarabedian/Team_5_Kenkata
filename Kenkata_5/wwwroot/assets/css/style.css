@@ -344,7 +344,10 @@ html, body {
 
 .newProduct-card {
     background-color: #EEEEEE;
+   
 }
+
+
 
 .card-footer {
     background-color: #0E153D;
@@ -1570,6 +1573,9 @@ button.link {
     }
 
 
+.productsForm .newProduct-card {
+    height: 262px;
+}
 
 
 
