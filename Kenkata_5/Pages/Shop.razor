@@ -1,6 +1,528 @@
 ﻿@page "/shop"
+@inject HttpClient Http
+
+<Header />
+
+@* ================== shop new customer ================== *@
+
+<div id="new-customer">
+    <div class="container">
+        <div class="discount">
+            <h1>New Customer Can Get <span style="color: #20D3C2;">30% Off</span></h1>
+            <NavLink href="learnmore"><button class="btn ">LEARN MORE</button></NavLink>
+        </div>
+
+        <div class="sneakers">
+            <div id="new" class="circle-new absolute-new">New</div>
+            <img id="l-sneaker" class="l-sneaker" src="assets/img/Left sneaker.svg" alt="l-sneaker">
+            <div id="dis" class="circle-discount absolute-dis">-20%</div>
+            <img id="r-sneaker" class="r-sneaker" src="assets/img/Right sneaker.svg" alt="r-sneaker">
+        </div>
+    </div>
+</div>
+
+
+
+@* =================== shop sort och nav ================= *@
+
+<div id="shop-sort">
+    <div class="container">
+        <div class="col-4">
+            <h4 class="">Shop</h4>
+            <div><NavLink href="/"><a class="link-grey">Home / </a></NavLink><NavLink href="shop"><a class="link-grey">Shop</a></NavLink></div>
+        </div>
+
+        <ul class="col-7 options list">
+            <li class="nav-item border">
+                <div class="d-flex align-items-center ps-4 pe-4 pt-3">
+                    <p class="m-0">Show: </p>
+                    <div class="d-flex">
+                        <a class="nav-link p-1" href="">9/</a>
+                        <a class="nav-link p-1" href="">12/</a>
+                        <a class="nav-link p-1" href="">18/</a>
+                        <a class="nav-link p-1" href="">24</a>
+                    </div>
+
+                </div>
+            </li>
+
+
+            <li id="l-sort" class="nav-item border ms-5 options">
+                <a class="nav-link" href=""><i class="bi bi-list-ul me-2"></i></a>
+                <a class="nav-link" href=""><i class="bi bi-grid-fill me-2"></i></a>
+                <a class="nav-link" href=""><i class="bi bi-grid-3x3-gap-fill"></i></a>
+            </li>
+
+            <li class="nav-item dropdown border ms-5 options">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Default sorting
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="">Price</a></li>
+                    <li><a class="dropdown-item" href="">Size</a></li>
+                    <li><a class="dropdown-item" href="">New Arrivals</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+
+
+@* ================ shop products ======================= *@
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-3">
+            @* ================= Filters ========================= *@
+            <section id="filters">
+                <div id="category">
+                    <h6>Product Categories</h6>
+                    <div class="flex justify-content-between filthov"><p>Men´s</p><p id="b-p" class="border-p ">18</p></div>
+                    <div class="flex justify-content-between filthov"><p>Women´s</p><p class="border-p ">18</p></div>
+                    <div class="flex justify-content-between filthov"><p>Kid´s</p><p class="border-p ">18</p></div>
+                    <div class="flex justify-content-between filthov"><p>Hats</p><p class="border-p ">18</p></div>
+                    <div class="flex justify-content-between filthov"><p>Sunglasses</p><p class="border-p ">18</p></div>
+                    <div class="flex justify-content-between filthov"><p>Shoes</p><p class="border-p ">18</p></div>
+                    <div class="flex justify-content-between filthov"><p>Watches</p><p class="border-p ">18</p></div>
+
+
+                    <!-- Filters  by Price -->
+                    <h6 class="mt-3 pb-3">Filter by Price</h6>
+                    <div class="mt-4">
+                        <div class="range-slider">
+
+                            <input value="0" min="0" max="10000" step="50" type="range">
+                            <input value="50000" min="0" max="10000" step="50" type="range">
+                            <span id="range">Price: $ <input type="number" value="0" min="0" max="10000" step="50"> - $ <input type="number" value="10000" min="0" max="10000" step="50"></span>
+
+                            <div class="d-flex">
+
+                                <button class="btn border mt-2">Filter</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filters by colors -->
+                    <h6 class="mt-5">Filter by Color</h6>
+                    <div id="filter-by-color">
+                        <div class="row">
+
+                            <div class="onhover">
+                                <div class="hov">
+                                    <div class=" mb-2 relative ">
+                                        <i id="s-fill" class="bi bi-square-fill black"></i>
+                                        <div class="flex justify-content-between"><p>Black</p><p>12</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="shov">
+                                    <div class=" mb-2 relative ">
+                                        <i id="s-check" class="bi bi-check-square-fill black"></i>
+                                        <div class="flex justify-content-between"><p>Black</p><p class="border pe-1">12</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="onhover">
+
+                                <div class="hov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-fill" class="bi bi-square-fill grey"></i>
+                                        <div class="flex justify-content-between d-width"><p>Grey</p><p>12</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="shov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-check" class="bi bi-check-square-fill grey"></i>
+                                        <div class="flex justify-content-between"><p>Grey</p><p class="border pe-1">12</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="onhover">
+
+                                <div class="hov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-fill" class="bi bi-square-fill red"></i>
+                                        <div class="flex justify-content-between d-width"><p>Red</p><p>12</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="shov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-check" class="bi bi-check-square-fill red"></i>
+                                        <div class="flex justify-content-between"><p>Red</p><p class="border pe-1">12</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="onhover">
+
+                                <div class="hov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-fill" class="bi bi-square-fill green"></i>
+                                        <div class="flex justify-content-between d-width"><p>Green</p><p>12</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="shov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-check" class="bi bi-check-square-fill green"></i>
+                                        <div class="flex justify-content-between"><p>Green</p><p class="border pe-1">12</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="onhover">
+
+                                <div class="hov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-fill" class="bi bi-square-fill orange"></i>
+                                        <div class="flex justify-content-between d-width"><p>Orange</p><p>12</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="shov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-check" class="bi bi-check-square-fill orange"></i>
+                                        <div class="flex justify-content-between"><p>Orange</p><p class="border pe-1">12</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="onhover">
+
+                                <div class="hov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-fill" class="bi bi-square-fill brown"></i>
+                                        <div class="flex justify-content-between d-width"><p>Brown</p><p>12</p></div>
+                                    </div>
+                                </div>
+
+                                <div class="shov">
+                                    <div class="mb-2 relative">
+                                        <i id="s-check" class="bi bi-check-square-fill brown"></i>
+                                        <div class="flex justify-content-between"><p>Brown</p><p class="border pe-1">12</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h6 class="mt-5">Filter By Size</h6>
+                <div class="flex justify-content-between filthov"><p>XS</p><p class="border-p ">18</p></div>
+                <div class="flex justify-content-between filthov"><p>S</p><p class="border-p ">18</p></div>
+                <div class="flex justify-content-between filthov"><p>M</p><p class="border-p ">18</p></div>
+                <div class="flex justify-content-between filthov"><p>L</p><p class="border-p ">18</p></div>
+                <div class="flex justify-content-between filthov"><p>XL</p><p class="border-p ">18</p></div>
+                <div class="flex justify-content-between filthov"><p>XXL</p><p class="border-p ">18</p></div>
+            </section>
+
+
+
+            <!-- Filters by brand -->
+
+            <div class="filter-container container ps-0">
+
+                <div class="filter-by-brand">
+                    <h1>Filter By Brand</h1>
+                </div>
+
+                <div class="brands">
+                    <NavLink href="bexim">
+                        <button class="brands-btn">
+                            <img src="assets/img/bexim.svg">
+                        </button>
+                    </NavLink>
+
+                    <NavLink href="lighton">
+                        <button class="brands-btn">
+                            <img src="assets/img/Lighton.svg">
+                        </button>
+                    </NavLink>
+
+
+
+                    <NavLink href="dismis">
+                        <button class="brands-btn">
+                            <img src="assets/img/dismis.svg">
+                        </button>
+                    </NavLink>
+
+                    <NavLink href="rosimo">
+                        <button class="brands-btn">
+                            <img src="assets/img/rosimo.svg">
+                        </button>
+                    </NavLink>
+
+
+
+                    <NavLink href="dallas">
+                        <button class="brands-btn">
+                            <img src="assets/img/dallas.svg">
+                        </button>
+                    </NavLink>
+                    <NavLink href="concord">
+                        <button class="brands-btn">
+                            <img src="assets/img/concord.svg">
+                        </button>
+                    </NavLink>
+                </div>
+
+
+                <div class="product-status">
+                    <h1>Product Status</h1>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            On Sale
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            In Stock
+                        </label>
+                    </div>
+                </div>
+
+                <div class="top-rated-products mb-3">
+                    <h1>Top Rated Products</h1>
+                </div>
+
+
+                <div class="test mb-4">
+                    <div><img src="assets/img/shirt.svg"></div>
+                    <div>
+                        <p mb-0>T-Shirt</p>
+
+                        <img src="assets/img/stars.svg">
+
+                        <p>$180</p>
+                    </div>
+                </div>
+
+                <div class="test mb-4">
+                    <div><img src="assets/img/shoe.svg"></div>
+                    <div>
+                        <p mb-0>Shoe</p>
+
+                        <img src="assets/img/stars.svg">
+
+                        <p>$180</p>
+                    </div>
+                </div>
+
+                <div class="test">
+                    <div><img src="assets/img/Sweater.jpg"></div>
+                    <div>
+                        <p mb-0>Sweater</p>
+
+                        <img src="assets/img/stars.svg">
+
+                        <p>$180</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="grid-products col-9">
+            @if (products == null)
+            {
+                <p>No products found</p>
+            }
+            else
+            {
+                @foreach (var product in products.Take(12))
+                {
+                    <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <div class="productsForm">
+                            <div class="onhover">
+                                <div class="card hov ">
+                                    <img id="shop-img" src="@product.Image" alt="boy" class="newProduct-card">
+                                    <img src="./assets/img/iconNew.svg" alt="icon" class="newIcon">
+                                    <div class="card-footer border-success"><span>Winter collection for women's</span></div>
+                                </div>
+
+
+                                <div class="showhov ">
+                                    <div class="card  ">
+                                        <div class="rectangle">
+                                            <i class="fas fa-circle tooltipcl "><span class="tooltiptext" id="bg"><i class="fas fa-circle sp-ms " style="color:#82D8C6"></i><i class="fas fa-circle sp-ms " style="color:#CA82D8"></i><i class="fas fa-circle sp-ms " style="color:#FE6C6C"></i><i class="fas fa-circle sp-ms " style="color:#333333"></i></span></i>
+                                            <i class="far fa-heart lineColor tooltipcl"><span class="tooltiptext">Add to favourite</span></i>
+                                            <i class="fas fa-random lineColor tooltipcl"><span class="tooltiptext">Compare</span></i>
+                                            <i class="fas fa-search lineColor tooltipcl"><span class="tooltiptext">Search</span></i>
+                                            <i class="fas fa-shopping-cart lineColor tooltipcl"><span class="tooltiptext">Add to cart</span></i>
+                                        </div>
+
+                                        <div>
+                                            <div class="card-body-hover">
+                                                <span class="card-text">@product.ProductName</span><br>
+                                                <span class="card-fashion">Fashion</span><br>
+                                                <span class="regular-price">@product.Price</span><br>
+                                                <span class="card-cost">@product.Price</span>
+                                            </div>
+
+                                            <div class="star">
+                                                <i class="fas fa-star "></i>
+                                                <i class="fas fa-star "></i>
+                                                <i class="fas fa-star "></i>
+                                                <i class="fas fa-star "></i>
+                                                <i class="far fa-star "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+<br>
+<br>
+<br>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog centered">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            <div class="modal-body">
+
+
+
+                <div class=" fraction1">
+                    <div class="col1">
+                        <img src="./assets/img/productBoy.svg" alt="">
+
+                        <div class="multiImg">
+                            <div class="subimg"> <img src="./assets/img/productBoy.svg" alt=""></div>
+                            <div class="subimg"> <img src="./assets/img/productBoy.svg" alt=""></div>
+                            <div class="subimg"> <img src="./assets/img/productBoy.svg" alt=""></div>
+                            <div class="subimg"> <img src="./assets/img/productBoy.svg" alt=""></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col2 ">
+                        <div class="reviwe">
+                            <div>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span><button class="link">(2 customer reviews)</button></span>
+                            </div>
+                            <div class="brandproduct">
+                                <img src="./assets/img/Brand.svg">
+                            </div>
+                        </div>
+                        <div>
+                            <p class="productName">Gents Blue Lightweight Trainers</p>
+                            <p class="productDes">
+                                Nulla non dignissim neque, sit amet finibus dolor.
+                                Nam semper, justo a sagittis lacinia, eros neque sagittis
+                                sapien, at molestie arcu enim non lacus. Nam venenatis
+                                dictum justo vel lobortis.
+                            </p>
+                        </div>
+                        <div>
+                            <span class="pricedis">$190.00</span>
+                            <span class="price">$220.00</span>
+                            <img src="./assets/img/In stock.svg" class="ms-5 "><span class="ms-2 textwei">In stock</span>
+                        </div>
+                        <div class="cartSec">
+                            <div class="addRemPro">
+                                <button class="removePro"><i class="fas fa-minus "></i></button>
+                                <input class="ammount">
+                                <button class="addPro"><i class="fas fa-plus "></i></button>
+                            </div>
+                            <button class="addToCart"><i class="bi bi-cart2"></i>Add to cart</button>
+                            <!-- <button class="addToCart"><i class="fas fa-shopping-cart"></i>Add to cart</button> -->
+
+
+                            <div class="colorPro">
+                                <i class="fas fa-circle" style="color: #64CB83;"></i>
+                                <i class="fas fa-circle" style="color: #FE4545;"></i>
+                                <i class="fas fa-circle" style="color: #00DCFF;"></i>
+                                <i class="fas fa-circle "></i>
+
+                            </div>
+                            <div>
+                                <img src="./assets/img/Component 13 – 1.svg">
+                            </div>
+                            <div>
+                                <img src="./assets/img/Heart icon.svg">
+                            </div>
+                        </div>
+                        <div class="cateSec">
+                            <span>Category:</span><span id="cateName">Clothe</span>
+                        </div>
+                        <div>
+                            <span>Tags:</span>
+                            <div class="tagsTxt">
+
+                            </div>
+                        </div>
+                        <div class="shareSec">
+
+                            <span>Share: </span>
+                            <img src="./assets/img/Component 15 – 1.svg">
+                            <img src="./assets/img/Component 16 – 1.svg">
+                            <img src="./assets/img/Component 17 – 1.svg">
+                            <img src="./assets/img/Component 18 – 1.svg">
+                            <img src="./assets/img/Component 19 – 1.svg">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<Footer />
 
 
 @code {
+    private IEnumerable<Product> products;
 
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await Http.GetFromJsonAsync<IEnumerable<Product>>("https://localhost:44315/api/Product");
+
+    }
 }
